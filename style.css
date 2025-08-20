@@ -4,19 +4,16 @@ body {
   padding: 20px;
   background: #f9f9f9;
 }
-
 h2 {
   text-align: center;
   margin-bottom: 30px;
 }
-
 .container {
   max-width: 1000px;
   margin: auto;
   display: grid;
   gap: 30px;
 }
-
 /* iFrame Section */
 .iframe-container {
   position: relative;
@@ -27,7 +24,6 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 .iframe-container iframe {
   position: absolute;
   top: 0;
@@ -36,7 +32,6 @@ h2 {
   height: 100%;
   border: 0;
 }
-
 /* Form Section */
 form {
   background: #fff;
@@ -44,7 +39,6 @@ form {
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
-
 form input,
 form textarea,
 form button {
@@ -55,7 +49,6 @@ form button {
   border-radius: 8px;
   font-size: 16px;
 }
-
 form button {
   background: #007bff;
   color: white;
@@ -63,11 +56,9 @@ form button {
   cursor: pointer;
   transition: 0.3s ease;
 }
-
 form button:hover {
   background: #0056b3;
 }
-
 @media (max-width: 600px) {
   .container {
     padding: 0 10px;
