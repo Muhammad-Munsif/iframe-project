@@ -25,7 +25,7 @@ h2 {
   height: 0;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .iframe-container iframe {
@@ -42,7 +42,7 @@ form {
   background: #fff;
   padding: 25px;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 form input,
@@ -57,7 +57,7 @@ form button {
 }
 
 form button {
-  background: #007BFF;
+  background: #007bff;
   color: white;
   border: none;
   cursor: pointer;
