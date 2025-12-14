@@ -1,4 +1,3 @@
-<script>
     // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const navLinks = document.getElementById('navLinks');
@@ -152,4 +151,3 @@
         card.style.animationDelay = `${index * 0.1}s`;
       });
     });
-  </script>
