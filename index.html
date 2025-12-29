@@ -1,0 +1,2363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Complete Responsive Showcase | All Devices</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ====== CSS RESET & VARIABLES ====== */
+    :root {
+      /* Modern Color Palette - Light Mode */
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --secondary: #10b981;
+      --accent: #f97316;
+      --danger: #ef4444;
+      --warning: #f59e0b;
+      --info: #3b82f6;
+
+      /* Neutral Colors */
+      --light: #ffffff;
+      --light-gray: #f8fafc;
+      --gray: #94a3b8;
+      --dark-gray: #64748b;
+      --dark: #1e293b;
+      --darker: #0f172a;
+
+      /* Background & Surface */
+      --bg-primary: #ffffff;
+      --bg-secondary: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-header: rgba(255, 255, 255, 0.95);
+
+      /* Text Colors */
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --text-muted: #94a3b8;
+
+      /* Gradients */
+      --gradient-primary: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+      --gradient-secondary: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+      --gradient-accent: linear-gradient(135deg, #f97316 0%, #fbbf24 100%);
+      --gradient-warning: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+      --gradient-dark: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      --gradient-light: linear-gradient(135deg, #f1f5f9 0%, #ffffff 100%);
+      --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+
+      /* Shadows */
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.12);
+      --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+      --shadow-inner: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+
+      /* Border Radius */
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-xl: 30px;
+      --radius-2xl: 40px;
+      --radius-full: 9999px;
+
+      /* Spacing */
+      --space-xs: 0.5rem;
+      --space-sm: 1rem;
+      --space-md: 1.5rem;
+      --space-lg: 2rem;
+      --space-xl: 3rem;
+      --space-2xl: 5rem;
+      --space-3xl: 7rem;
+
+      /* Transitions */
+      --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+      /* Font Sizes - Fluid Typography */
+      --text-xs: clamp(0.75rem, 2vw, 0.875rem);
+      --text-sm: clamp(0.875rem, 2.5vw, 1rem);
+      --text-base: clamp(1rem, 3vw, 1.125rem);
+      --text-lg: clamp(1.125rem, 3.5vw, 1.25rem);
+      --text-xl: clamp(1.25rem, 4vw, 1.5rem);
+      --text-2xl: clamp(1.5rem, 5vw, 2rem);
+      --text-3xl: clamp(2rem, 6vw, 2.5rem);
+      --text-4xl: clamp(2.5rem, 7vw, 3rem);
+      --text-5xl: clamp(3rem, 8vw, 3.5rem);
+      --text-6xl: clamp(3.5rem, 9vw, 4rem);
+
+      /* Z-index layers */
+      --z-dropdown: 1000;
+      --z-sticky: 1020;
+      --z-fixed: 1030;
+      --z-modal-backdrop: 1040;
+      --z-modal: 1050;
+      --z-popover: 1060;
+      --z-tooltip: 1070;
+    }
+
+    /* ====== DARK MODE THEME ====== */
+    [data-theme="dark"] {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #10b981;
+      --accent: #f97316;
+
+      /* Neutral Colors - Dark Mode */
+      --light: #0f172a;
+      --light-gray: #1e293b;
+      --gray: #64748b;
+      --dark-gray: #94a3b8;
+      --dark: #f8fafc;
+      --darker: #ffffff;
+
+      /* Background & Surface - Dark Mode */
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #1e293b;
+      --bg-header: rgba(15, 23, 42, 0.95);
+
+      /* Text Colors - Dark Mode */
+      --text-primary: #f8fafc;
+      --text-secondary: #cbd5e1;
+      --text-muted: #94a3b8;
+
+      /* Gradients - Dark Mode */
+      --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+      --gradient-dark: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      --gradient-light: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      --gradient-hero: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+
+      /* Shadows - Dark Mode */
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+      --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.25);
+      --shadow-lg: 0 15px 40px rgba(0, 0, 0, 0.3);
+      --shadow-xl: 0 25px 50px rgba(0, 0, 0, 0.35);
+    }
+
+    /* ====== BASE STYLES ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      color: var(--text-primary);
+      background-color: var(--bg-primary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      transition: background-color var(--transition-slow), color var(--transition-slow);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+
+    p {
+      color: var(--text-secondary);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* ====== UTILITY CLASSES ====== */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 var(--space-md);
+    }
+
+    .section {
+      padding: var(--space-3xl) 0;
+      position: relative;
+    }
+
+    .section-title {
+      font-size: var(--text-5xl);
+      text-align: center;
+      margin-bottom: var(--space-md);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      display: inline-block;
+      width: 100%;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: var(--gradient-primary);
+      border-radius: var(--radius-full);
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: var(--text-xl);
+      max-width: 700px;
+      margin: var(--space-lg) auto var(--space-2xl);
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-sm) var(--space-xl);
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: var(--text-base);
+      text-decoration: none;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      border: 2px solid transparent;
+      gap: 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: var(--transition-normal);
+    }
+
+    .btn:hover::before {
+      left: 100%;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-secondary {
+      background: var(--gradient-secondary);
+      color: white;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-primary);
+      border: 2px solid transparent;
+    }
+
+    .btn-ghost:hover {
+      background: rgba(79, 70, 229, 0.1);
+      color: var(--primary);
+    }
+
+    .text-gradient {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ====== HEADER & NAVIGATION ====== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--bg-header);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-sm);
+      z-index: var(--z-fixed);
+      transition: all var(--transition-normal);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: var(--space-sm) 0;
+      min-height: 80px;
+    }
+
+    .logo {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-icon {
+      font-size: var(--text-3xl);
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: var(--space-md);
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 500;
+      font-size: var(--text-base);
+      padding: var(--space-xs) var(--space-sm);
+      border-radius: var(--radius-md);
+      transition: all var(--transition-fast);
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+      background: rgba(79, 70, 229, 0.1);
+    }
+
+    .nav-links a.active {
+      color: var(--primary);
+      background: rgba(79, 70, 229, 0.1);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: var(--bg-card);
+      border: 2px solid var(--light-gray);
+      color: var(--text-primary);
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all var(--transition-normal);
+      font-size: var(--text-lg);
+    }
+
+    .theme-toggle:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: rotate(15deg);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: var(--text-2xl);
+      color: var(--text-primary);
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-md);
+      align-items: center;
+      justify-content: center;
+      transition: all var(--transition-fast);
+    }
+
+    .mobile-menu-btn:hover {
+      background: rgba(79, 70, 229, 0.1);
+      color: var(--primary);
+    }
+
+    /* ====== HERO SECTION ====== */
+    .hero {
+      padding: var(--space-3xl) 0;
+      background: var(--gradient-hero);
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-bg-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .hero-bg-element {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      opacity: 0.1;
+      filter: blur(60px);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .hero-bg-element:nth-child(1) {
+      width: 400px;
+      height: 400px;
+      top: 10%;
+      right: 10%;
+      animation-delay: 0s;
+    }
+
+    .hero-bg-element:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      bottom: 10%;
+      left: 10%;
+      background: var(--gradient-secondary);
+      animation-delay: 2s;
+    }
+
+    .hero-bg-element:nth-child(3) {
+      width: 200px;
+      height: 200px;
+      top: 50%;
+      left: 20%;
+      background: var(--gradient-accent);
+      animation-delay: 4s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px) rotate(0deg);
+      }
+
+      50% {
+        transform: translateY(-40px) rotate(180deg);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: var(--text-6xl);
+      margin-bottom: var(--space-lg);
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: var(--text-2xl);
+      color: var(--text-secondary);
+      margin-bottom: var(--space-2xl);
+      line-height: 1.6;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-stats {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-2xl);
+      margin-top: var(--space-2xl);
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: var(--text-4xl);
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: var(--space-xs);
+    }
+
+    .stat-label {
+      font-size: var(--text-sm);
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* ====== FEATURES SECTION ====== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      padding: var(--space-xl);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      transition: all var(--transition-normal);
+      border: 1px solid transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--gradient-primary);
+      opacity: 0;
+      transition: var(--transition-normal);
+      z-index: -1;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary);
+    }
+
+    .feature-card:hover::before {
+      opacity: 0.05;
+    }
+
+    .feature-icon {
+      width: 80px;
+      height: 80px;
+      background: var(--gradient-primary);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-lg);
+      font-size: var(--text-3xl);
+      color: white;
+      transition: var(--transition-normal);
+    }
+
+    .feature-card:hover .feature-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+
+    .feature-card h3 {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-sm);
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ====== DEMO SECTION ====== */
+    .demo-section {
+      background: var(--gradient-dark);
+      color: white;
+      position: relative;
+    }
+
+    .demo-section .section-title,
+    .demo-section .section-subtitle {
+      color: white;
+      -webkit-text-fill-color: white;
+    }
+
+    .demo-section .section-title {
+      background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .demo-container {
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .demo-tabs {
+      display: flex;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--light-gray);
+    }
+
+    .demo-tab {
+      flex: 1;
+      padding: var(--space-md);
+      text-align: center;
+      background: none;
+      border: none;
+      font-weight: 600;
+      font-size: var(--text-base);
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .demo-tab::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 3px;
+      background: var(--gradient-primary);
+      transition: var(--transition-normal);
+    }
+
+    .demo-tab.active {
+      background: var(--bg-card);
+      color: var(--primary);
+    }
+
+    .demo-tab.active::after {
+      width: 100%;
+    }
+
+    .demo-tab:hover:not(.active) {
+      background: rgba(79, 70, 229, 0.1);
+      color: var(--primary);
+    }
+
+    .demo-content {
+      padding: var(--space-xl);
+      min-height: 500px;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.5s ease-out;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .iframe-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: var(--bg-secondary);
+    }
+
+    .iframe-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .demo-controls {
+      display: flex;
+      gap: var(--space-sm);
+      flex-wrap: wrap;
+      margin-top: var(--space-lg);
+      justify-content: center;
+    }
+
+    /* ====== PRICING SECTION ====== */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+
+    .pricing-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      padding: var(--space-xl);
+      box-shadow: var(--shadow-md);
+      text-align: center;
+      position: relative;
+      transition: all var(--transition-normal);
+      border: 2px solid transparent;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-xl);
+      border-color: var(--primary);
+    }
+
+    .pricing-card.popular {
+      border-color: var(--primary);
+      transform: scale(1.05);
+      background: var(--bg-card);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--gradient-primary);
+      color: white;
+      padding: var(--space-xs) var(--space-lg);
+      border-radius: var(--radius-full);
+      font-size: var(--text-sm);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .price {
+      font-size: var(--text-6xl);
+      font-weight: 800;
+      margin: var(--space-lg) 0;
+      color: var(--text-primary);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 5px;
+    }
+
+    .price span {
+      font-size: var(--text-xl);
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-top: 10px;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin: var(--space-xl) 0;
+      text-align: left;
+      flex-grow: 1;
+    }
+
+    .pricing-features li {
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--light-gray);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-primary);
+    }
+
+    .pricing-features li i {
+      color: var(--secondary);
+      font-size: var(--text-lg);
+      min-width: 24px;
+    }
+
+    .pricing-features li.disabled {
+      color: var(--text-muted);
+    }
+
+    .pricing-features li.disabled i {
+      color: var(--text-muted);
+    }
+
+    /* ====== TESTIMONIALS SECTION ====== */
+    .testimonials-section {
+      background: var(--gradient-light);
+    }
+
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: var(--space-xl);
+      margin-top: var(--space-xl);
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      padding: var(--space-xl);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-md);
+      transition: var(--transition-normal);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -30px;
+      left: 20px;
+      font-size: var(--text-6xl);
+      color: var(--primary);
+      opacity: 0.1;
+      font-family: serif;
+      line-height: 1;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .testimonial-text {
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-lg);
+      line-height: 1.6;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+    }
+
+    .author-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: white;
+      font-size: var(--text-2xl);
+      flex-shrink: 0;
+    }
+
+    .author-info h4 {
+      font-size: var(--text-xl);
+      margin-bottom: 5px;
+    }
+
+    .author-info p {
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+    }
+
+    /* ====== FAQ SECTION ====== */
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--bg-card);
+      margin-bottom: var(--space-md);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      border: 1px solid var(--light-gray);
+      transition: var(--transition-normal);
+    }
+
+    .faq-item:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    .faq-question {
+      padding: var(--space-lg);
+      background: var(--bg-card);
+      border: none;
+      width: 100%;
+      text-align: left;
+      font-weight: 600;
+      font-size: var(--text-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition-fast);
+      color: var(--text-primary);
+    }
+
+    .faq-question:hover {
+      color: var(--primary);
+    }
+
+    .faq-answer {
+      padding: 0 var(--space-lg);
+      max-height: 0;
+      overflow: hidden;
+      transition: var(--transition-normal);
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .faq-answer.active {
+      padding: 0 var(--space-lg) var(--space-lg);
+      max-height: 500px;
+    }
+
+    .faq-icon {
+      transition: transform var(--transition-normal);
+    }
+
+    .faq-question.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    /* ====== CONTACT FORM SECTION ====== */
+    .contact-form-container {
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-lg);
+      padding: var(--space-2xl);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .form-group {
+      margin-bottom: var(--space-lg);
+    }
+
+    .form-label {
+      display: block;
+      margin-bottom: var(--space-sm);
+      font-weight: 600;
+      color: var(--text-primary);
+      font-size: var(--text-base);
+    }
+
+    .form-input {
+      width: 100%;
+      padding: var(--space-md);
+      border: 2px solid var(--light-gray);
+      border-radius: var(--radius-md);
+      font-size: var(--text-base);
+      transition: var(--transition-fast);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+    }
+
+    .form-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-lg);
+    }
+
+    textarea.form-input {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    /* ====== FOOTER ====== */
+    .footer {
+      background: var(--gradient-dark);
+      color: white;
+      padding: var(--space-3xl) 0 var(--space-xl);
+      position: relative;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--gradient-primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--space-2xl);
+      margin-bottom: var(--space-2xl);
+    }
+
+    .footer-logo {
+      font-size: var(--text-2xl);
+      font-weight: 800;
+      margin-bottom: var(--space-md);
+      display: block;
+      color: white;
+      text-decoration: none;
+    }
+
+    .footer-description {
+      color: rgba(255, 255, 255, 0.8);
+      margin-bottom: var(--space-lg);
+      line-height: 1.6;
+    }
+
+    .footer-links h3 {
+      margin-bottom: var(--space-lg);
+      font-size: var(--text-xl);
+      color: white;
+    }
+
+    .footer-links ul {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: var(--space-sm);
+    }
+
+    .footer-links a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      transform: translateX(5px);
+    }
+
+    .social-links {
+      display: flex;
+      gap: var(--space-sm);
+      margin-top: var(--space-lg);
+    }
+
+    .social-link {
+      width: 45px;
+      height: 45px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: var(--transition-normal);
+    }
+
+    .social-link:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: var(--space-xl);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.6);
+      font-size: var(--text-sm);
+    }
+
+    /* ====== SCROLL TO TOP ====== */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: var(--gradient-primary);
+      color: white;
+      border-radius: var(--radius-full);
+      border: none;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all var(--transition-normal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: var(--text-xl);
+      z-index: var(--z-fixed);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: var(--shadow-xl);
+    }
+
+    /* ====== ANIMATIONS ====== */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ====== RESPONSIVE DESIGN ====== */
+    @media (max-width: 1200px) {
+      :root {
+        --space-3xl: 5rem;
+        --space-2xl: 4rem;
+        --space-xl: 2.5rem;
+        --space-lg: 1.75rem;
+      }
+
+      .container {
+        padding: 0 var(--space-lg);
+      }
+
+      .hero-title {
+        font-size: var(--text-5xl);
+      }
+
+      .hero-subtitle {
+        font-size: var(--text-xl);
+      }
+    }
+
+    @media (max-width: 992px) {
+      :root {
+        --space-3xl: 4rem;
+        --space-2xl: 3rem;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-header);
+        backdrop-filter: blur(20px);
+        flex-direction: column;
+        padding: var(--space-lg);
+        box-shadow: var(--shadow-lg);
+        display: none;
+        z-index: var(--z-fixed);
+        border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .mobile-menu-btn {
+        display: flex;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-card.popular {
+        transform: none;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 300px;
+      }
+
+      .features-grid,
+      .testimonials-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --space-3xl: 3rem;
+        --space-2xl: 2.5rem;
+        --space-xl: 2rem;
+      }
+
+      .section {
+        padding: var(--space-2xl) 0;
+      }
+
+      .hero {
+        padding: var(--space-2xl) 0;
+        min-height: auto;
+      }
+
+      .hero-title {
+        font-size: var(--text-4xl);
+      }
+
+      .hero-subtitle {
+        font-size: var(--text-lg);
+      }
+
+      .hero-stats {
+        gap: var(--space-xl);
+      }
+
+      .section-title {
+        font-size: var(--text-4xl);
+      }
+
+      .section-subtitle {
+        font-size: var(--text-lg);
+      }
+
+      .demo-content {
+        padding: var(--space-lg);
+      }
+
+      .demo-tabs {
+        flex-direction: column;
+      }
+
+      .contact-form-container {
+        padding: var(--space-xl);
+      }
+
+      .footer-grid {
+        gap: var(--space-xl);
+      }
+
+      .scroll-top {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .hero-bg-elements {
+        display: none;
+      }
+    }
+
+    @media (max-width: 576px) {
+      :root {
+        --space-3xl: 2.5rem;
+        --space-2xl: 2rem;
+        --space-xl: 1.5rem;
+      }
+
+      .container {
+        padding: 0 var(--space-md);
+      }
+
+      .hero-title {
+        font-size: var(--text-3xl);
+      }
+
+      .hero-subtitle {
+        font-size: var(--text-base);
+      }
+
+      .section-title {
+        font-size: var(--text-3xl);
+      }
+
+      .section-subtitle {
+        font-size: var(--text-base);
+      }
+
+      .feature-card,
+      .testimonial-card,
+      .pricing-card {
+        padding: var(--space-lg);
+      }
+
+      .price {
+        font-size: var(--text-4xl);
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: var(--space-lg);
+      }
+
+      .demo-controls {
+        flex-direction: column;
+      }
+
+      .demo-controls .btn {
+        width: 100%;
+      }
+
+      .footer {
+        padding: var(--space-2xl) 0 var(--space-lg);
+      }
+
+      .nav-container {
+        min-height: 70px;
+      }
+
+      .logo {
+        font-size: var(--text-xl);
+      }
+    }
+
+    @media (max-width: 400px) {
+      .features-grid,
+      .testimonials-grid,
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .feature-card,
+      .testimonial-card,
+      .pricing-card {
+        padding: var(--space-md);
+      }
+
+      .hero-buttons {
+        gap: var(--space-sm);
+      }
+
+      .contact-form-container {
+        padding: var(--space-lg);
+      }
+    }
+
+    /* ====== PRINT STYLES ====== */
+    @media print {
+      .header,
+      .footer,
+      .scroll-top,
+      .theme-toggle,
+      .mobile-menu-btn,
+      .hero-buttons {
+        display: none !important;
+      }
+
+      .section {
+        padding: 1rem 0 !important;
+        page-break-inside: avoid;
+      }
+
+      body {
+        color: #000 !important;
+        background: #fff !important;
+      }
+
+      a {
+        color: #000 !important;
+        text-decoration: underline !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header & Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#" class="logo">
+        <i class="fas fa-palette logo-icon"></i>
+        <span>ResponsivePro</span>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#demo">Demo</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero section" id="home">
+    <div class="hero-bg-elements">
+      <div class="hero-bg-element"></div>
+      <div class="hero-bg-element"></div>
+      <div class="hero-bg-element"></div>
+    </div>
+
+    <div class="container">
+      <div class="hero-content fade-in">
+        <h1 class="hero-title">
+          <span class="text-gradient">Beautifully Responsive</span><br>
+          Designs for Every Device
+        </h1>
+        <p class="hero-subtitle">
+          Create stunning, fully-responsive websites that work perfectly on phones, tablets, and
+          desktops. Our modern design system ensures optimal viewing experience across all screen sizes.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#demo" class="btn btn-primary">
+            <i class="fas fa-play-circle"></i> View Live Demo
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <i class="fas fa-rocket"></i> Start Free Trial
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-number">99.9%</div>
+            <div class="stat-label">Uptime</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">0.8s</div>
+            <div class="stat-label">Load Time</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">A+</div>
+            <div class="stat-label">Performance</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Support</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="section" id="features">
+    <div class="container">
+      <h2 class="section-title fade-in">Powerful Features</h2>
+      <p class="section-subtitle fade-in">Everything you need to build responsive websites that captivate your audience
+      </p>
+
+      <div class="features-grid">
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Mobile-First Design</h3>
+          <p>Built with mobile-first approach ensuring perfect experience on all devices from smartphones to desktops.
+          </p>
+          <a href="#" class="btn btn-ghost" style="margin-top: var(--space-md);">
+            Learn More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <h3>Lightning Fast</h3>
+          <p>Optimized for speed with minimal loading times and smooth animations across all devices and browsers.</p>
+          <a href="#" class="btn btn-ghost" style="margin-top: var(--space-md);">
+            Learn More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="feature-card fade-in">
+          <div class="feature-icon">
+            <i class="fas fa-palette"></i>
+          </div>
+          <h3>Modern Aesthetics</h3>
+          <p>Clean, modern aesthetics with customizable color schemes, typography, and component libraries.</p>
+          <a href="#" class="btn btn-ghost" style="margin-top: var(--space-md);">
+            Learn More <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo Section -->
+  <section class="demo-section section" id="demo">
+    <div class="container">
+      <h2 class="section-title fade-in">Live Demo</h2>
+      <p class="section-subtitle fade-in">See how our responsive design adapts to different screen sizes in real-time</p>
+
+      <div class="demo-container fade-in">
+        <div class="demo-tabs">
+          <button class="demo-tab active" data-tab="iframe">
+            <i class="fas fa-desktop"></i> Live Preview
+          </button>
+          <button class="demo-tab" data-tab="code">
+            <i class="fas fa-code"></i> Responsive Code
+          </button>
+          <button class="demo-tab" data-tab="stats">
+            <i class="fas fa-chart-bar"></i> Performance
+          </button>
+        </div>
+
+        <div class="demo-content">
+          <div class="tab-content active" id="iframe-tab">
+            <div class="iframe-container">
+              <!-- Using a placeholder that shows responsive behavior -->
+              <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg-secondary); display: flex; align-items: center; justify-content: center; flex-direction: column; padding: var(--space-lg);">
+                <div style="width: 100%; max-width: 400px; background: var(--bg-primary); border-radius: var(--radius-lg); padding: var(--space-xl); text-align: center; box-shadow: var(--shadow-md);">
+                  <i class="fas fa-laptop" style="font-size: var(--text-5xl); color: var(--primary); margin-bottom: var(--space-md);"></i>
+                  <h3 style="margin-bottom: var(--space-sm); color: var(--text-primary);">Responsive Demo</h3>
+                  <p style="color: var(--text-secondary); margin-bottom: var(--space-md);">This container adapts to all screen sizes</p>
+                  <div style="display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap;">
+                    <span style="background: var(--gradient-primary); color: white; padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-full); font-size: var(--text-sm);">Desktop</span>
+                    <span style="background: var(--gradient-secondary); color: white; padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-full); font-size: var(--text-sm);">Tablet</span>
+                    <span style="background: var(--gradient-accent); color: white; padding: var(--space-xs) var(--space-sm); border-radius: var(--radius-full); font-size: var(--text-sm);">Mobile</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="demo-controls">
+              <button class="btn btn-primary" onclick="simulateMobile()">
+                <i class="fas fa-mobile-alt"></i> Mobile View
+              </button>
+              <button class="btn btn-secondary" onclick="simulateTablet()">
+                <i class="fas fa-tablet-alt"></i> Tablet View
+              </button>
+              <button class="btn btn-outline" onclick="simulateDesktop()">
+                <i class="fas fa-desktop"></i> Desktop View
+              </button>
+            </div>
+          </div>
+
+          <div class="tab-content" id="code-tab">
+            <pre style="background: var(--bg-secondary); color: var(--text-primary); padding: var(--space-lg); border-radius: var(--radius-lg); overflow: auto; font-size: var(--text-sm); line-height: 1.5;">
+<code><span style="color: #10b981;">/* Responsive CSS with Modern Features */</span>
+<span style="color: #f59e0b;">.container</span> {
+  <span style="color: #6366f1;">max-width</span>: <span style="color: #10b981;">1200px</span>;
+  <span style="color: #6366f1;">margin</span>: <span style="color: #10b981;">0 auto</span>;
+  <span style="color: #6366f1;">padding</span>: <span style="color: #10b981;">0 1rem</span>;
+  <span style="color: #6366f1;">display</span>: <span style="color: #10b981;">grid</span>;
+  <span style="color: #6366f1;">gap</span>: <span style="color: #10b981;">2rem</span>;
+}
+
+<span style="color: #f59e0b;">@media</span> (<span style="color: #6366f1;">max-width</span>: <span style="color: #10b981;">768px</span>) {
+  <span style="color: #f59e0b;">.container</span> {
+    <span style="color: #6366f1;">padding</span>: <span style="color: #10b981;">0 0.5rem</span>;
+    <span style="color: #6366f1;">gap</span>: <span style="color: #10b981;">1rem</span>;
+  }
+  
+  <span style="color: #f59e0b;">.hero-title</span> {
+    <span style="color: #6366f1;">font-size</span>: <span style="color: #10b981;">clamp(2rem, 5vw, 3rem)</span>;
+  }
+  
+  <span style="color: #f59e0b;">.grid</span> {
+    <span style="color: #6366f1;">grid-template-columns</span>: <span style="color: #10b981;">1fr</span>;
+  }
+}
+
+<span style="color: #f59e0b;">@media</span> (<span style="color: #6366f1;">max-width</span>: <span style="color: #10b981;">480px</span>) {
+  <span style="color: #f59e0b;">.btn</span> {
+    <span style="color: #6366f1;">width</span>: <span style="color: #10b981;">100%</span>;
+  }
+  
+  <span style="color: #f59e0b;">.section</span> {
+    <span style="color: #6366f1;">padding</span>: <span style="color: #10b981;">2rem 0</span>;
+  }
+}</code>
+            </pre>
+          </div>
+
+          <div class="tab-content" id="stats-tab">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-lg);">
+              <div class="stat-box" style="text-align: center; padding: var(--space-xl); background: var(--bg-secondary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--text-5xl); font-weight: 800; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: var(--space-sm);">99.9%</div>
+                <div style="color: var(--text-secondary); font-weight: 600;">Uptime Guarantee</div>
+              </div>
+              <div class="stat-box" style="text-align: center; padding: var(--space-xl); background: var(--bg-secondary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--text-5xl); font-weight: 800; background: var(--gradient-secondary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: var(--space-sm);">0.8s</div>
+                <div style="color: var(--text-secondary); font-weight: 600;">Average Load Time</div>
+              </div>
+              <div class="stat-box" style="text-align: center; padding: var(--space-xl); background: var(--bg-secondary); border-radius: var(--radius-lg);">
+                <div style="font-size: var(--text-5xl); font-weight: 800; background: var(--gradient-accent); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: var(--space-sm);">A+</div>
+                <div style="color: var(--text-secondary); font-weight: 600;">Performance Grade</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <h2 class="section-title fade-in">Simple Pricing</h2>
+      <p class="section-subtitle fade-in">Choose the perfect plan for your needs. All plans include responsive design
+        features.</p>
+
+      <div class="pricing-grid">
+        <div class="pricing-card fade-in">
+          <h3>Starter</h3>
+          <div class="price">$19<span>/month</span></div>
+          <p>Perfect for small projects and personal websites</p>
+
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Responsive Templates</li>
+            <li><i class="fas fa-check"></i> Basic Support (Email)</li>
+            <li><i class="fas fa-check"></i> Mobile Optimization</li>
+            <li class="disabled"><i class="fas fa-times"></i> Advanced Animations</li>
+            <li class="disabled"><i class="fas fa-times"></i> Priority Support</li>
+            <li class="disabled"><i class="fas fa-times"></i> Custom Components</li>
+          </ul>
+
+          <button class="btn btn-outline" style="width: 100%; margin-top: auto;">Choose Plan</button>
+        </div>
+
+        <div class="pricing-card popular fade-in">
+          <div class="popular-badge">MOST POPULAR</div>
+          <h3>Professional</h3>
+          <div class="price">$49<span>/month</span></div>
+          <p>Best for growing businesses and agencies</p>
+
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Everything in Starter</li>
+            <li><i class="fas fa-check"></i> Premium Templates</li>
+            <li><i class="fas fa-check"></i> Advanced Animations</li>
+            <li><i class="fas fa-check"></i> Priority Support</li>
+            <li><i class="fas fa-check"></i> Custom Components</li>
+            <li><i class="fas fa-check"></i> Performance Analytics</li>
+          </ul>
+
+          <button class="btn btn-primary" style="width: 100%; margin-top: auto;">Choose Plan</button>
+        </div>
+
+        <div class="pricing-card fade-in">
+          <h3>Enterprise</h3>
+          <div class="price">$99<span>/month</span></div>
+          <p>For large organizations and enterprises</p>
+
+          <ul class="pricing-features">
+            <li><i class="fas fa-check"></i> Everything in Professional</li>
+            <li><i class="fas fa-check"></i> Custom Development</li>
+            <li><i class="fas fa-check"></i> 24/7 Phone Support</li>
+            <li><i class="fas fa-check"></i> SLA Guarantee</li>
+            <li><i class="fas fa-check"></i> Dedicated Account Manager</li>
+            <li><i class="fas fa-check"></i> White Label Solution</li>
+          </ul>
+
+          <button class="btn btn-outline" style="width: 100%; margin-top: auto;">Contact Sales</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials-section section" id="testimonials">
+    <div class="container">
+      <h2 class="section-title fade-in">What Our Clients Say</h2>
+      <p class="section-subtitle fade-in">Don't just take our word for it - hear from some of our satisfied customers
+      </p>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-text">"The responsive design system transformed our website. Our mobile conversions
+            increased by 300% within the first month of implementation. The team was professional and delivered beyond
+            expectations."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">SJ</div>
+            <div class="author-info">
+              <h4>Sarah Johnson</h4>
+              <p>CEO, TechVision Inc.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-text">"Working with ResponsivePro was a game-changer for our digital presence. Our site
+            now works perfectly on every device imaginable, from smartphones to large desktop monitors."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">MR</div>
+            <div class="author-info">
+              <h4>Michael Rodriguez</h4>
+              <p>CTO, Digital Solutions</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card fade-in">
+          <p class="testimonial-text">"The responsive templates saved us months of development time and significantly
+            improved our site performance. Highly recommended for any business looking to improve their online presence."
+          </p>
+          <div class="testimonial-author">
+            <div class="author-avatar">ED</div>
+            <div class="author-info">
+              <h4>Emily Davis</h4>
+              <p>Marketing Director, GrowthLab</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title fade-in">Frequently Asked Questions</h2>
+      <p class="section-subtitle fade-in">Find answers to common questions about our responsive design solutions</p>
+
+      <div class="faq-container fade-in">
+        <div class="faq-item">
+          <button class="faq-question">
+            How does responsive design work?
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Responsive design uses CSS media queries, flexible grids, and responsive images to automatically adjust
+              your website's layout to fit any screen size, from mobile phones to desktop computers. This ensures optimal
+              viewing experience across all devices.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you support all devices and browsers?
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! Our designs are tested on a wide range of devices including iOS, Android, tablets, laptops, and
+              desktops with different screen sizes and resolutions. We support all modern browsers including Chrome,
+              Firefox, Safari, and Edge.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I customize the designs to match my brand?
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely! All our templates are fully customizable. You can change colors, fonts, layouts, components,
+              and more to match your brand identity. We also offer custom development services for unique requirements.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What kind of support do you provide?
+            <i class="fas fa-chevron-down faq-icon"></i>
+          </button>
+          <div class="faq-answer">
+            <p>We provide comprehensive support including email support for all plans, priority support for professional
+              plans, and 24/7 phone support for enterprise customers. We also offer extensive documentation and video
+              tutorials.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title fade-in">Get in Touch</h2>
+      <p class="section-subtitle fade-in">Ready to make your website responsive? Contact us for a free consultation.</p>
+
+      <div class="contact-form-container fade-in">
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name" class="form-label">Full Name</label>
+              <input type="text" id="name" class="form-input" placeholder="Enter your name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" id="email" class="form-input" placeholder="Enter your email" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="company" class="form-label">Company (Optional)</label>
+            <input type="text" id="company" class="form-input" placeholder="Your company name">
+          </div>
+
+          <div class="form-group">
+            <label for="service" class="form-label">Service Interested In</label>
+            <select id="service" class="form-input">
+              <option value="">Select a service</option>
+              <option value="responsive">Responsive Design</option>
+              <option value="development">Web Development</option>
+              <option value="consulting">Consultation</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea id="message" class="form-input" rows="5" placeholder="Tell us about your project..."
+              required></textarea>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg);">
+            <input type="checkbox" id="newsletter" style="width: 20px; height: 20px;">
+            <label for="newsletter" style="color: var(--text-secondary); font-size: var(--text-sm);">
+              Subscribe to our newsletter for updates and tips
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a href="#" class="footer-logo">
+            <i class="fas fa-palette" style="margin-right: 10px;"></i>
+            ResponsivePro
+          </a>
+          <p class="footer-description">
+            Creating beautiful, responsive websites that work perfectly on every device. We help businesses transform
+            their digital presence with modern, accessible designs.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#features"><i class="fas fa-chevron-right"></i> Features</a></li>
+            <li><a href="#demo"><i class="fas fa-chevron-right"></i> Demo</a></li>
+            <li><a href="#pricing"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Documentation</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Tutorials</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Blog</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Support Center</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right"></i> Community</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><a href="#"><i class="fas fa-map-marker-alt"></i> 123 Design Street, Web City</a></li>
+            <li><a href="tel:+15551234567"><i class="fas fa-phone"></i> +1 (555) 123-4567</a></li>
+            <li><a href="mailto:hello@responsivepro.com"><i class="fas fa-envelope"></i> hello@responsivepro.com</a></li>
+            <li><a href="#"><i class="fas fa-clock"></i> Mon-Fri: 9AM-6PM EST</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> ResponsivePro. All rights reserved. | <a href="#"
+            style="color: rgba(255, 255, 255, 0.8);">Privacy Policy</a> | <a href="#"
+            style="color: rgba(255, 255, 255, 0.8);">Terms of Service</a> | Designed with <i class="fas fa-heart"
+            style="color: #ef4444;"></i> for responsive web design</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Enhanced Website Functionality with Dark/Light Mode
+    document.addEventListener("DOMContentLoaded", function () {
+      // ====== THEME TOGGLE ======
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = themeToggle.querySelector("i");
+
+      // Check for saved theme or system preference
+      const savedTheme = localStorage.getItem("responsivepro-theme");
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+      if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
+        document.documentElement.setAttribute("data-theme", "dark");
+        themeIcon.className = "fas fa-sun";
+        themeToggle.setAttribute("aria-label", "Switch to light mode");
+      } else {
+        document.documentElement.setAttribute("data-theme", "light");
+        themeIcon.className = "fas fa-moon";
+        themeToggle.setAttribute("aria-label", "Switch to dark mode");
+      }
+
+      themeToggle.addEventListener("click", function () {
+        const currentTheme = document.documentElement.getAttribute("data-theme");
+
+        if (currentTheme === "dark") {
+          document.documentElement.setAttribute("data-theme", "light");
+          themeIcon.className = "fas fa-moon";
+          localStorage.setItem("responsivepro-theme", "light");
+          themeToggle.setAttribute("aria-label", "Switch to dark mode");
+          showToast("Light mode activated");
+        } else {
+          document.documentElement.setAttribute("data-theme", "dark");
+          themeIcon.className = "fas fa-sun";
+          localStorage.setItem("responsivepro-theme", "dark");
+          themeToggle.setAttribute("aria-label", "Switch to light mode");
+          showToast("Dark mode activated");
+        }
+      });
+
+      // ====== MOBILE MENU TOGGLE ======
+      const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+      const navLinks = document.getElementById("navLinks");
+      const mobileMenuIcon = mobileMenuBtn.querySelector("i");
+
+      mobileMenuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        mobileMenuIcon.className = navLinks.classList.contains("active")
+          ? "fas fa-times"
+          : "fas fa-bars";
+
+        // Update aria-label for accessibility
+        mobileMenuBtn.setAttribute(
+          "aria-expanded",
+          navLinks.classList.contains("active")
+        );
+        mobileMenuBtn.setAttribute(
+          "aria-label",
+          navLinks.classList.contains("active") ? "Close menu" : "Open menu"
+        );
+      });
+
+      // Close mobile menu when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!navLinks.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          navLinks.classList.remove("active");
+          mobileMenuIcon.className = "fas fa-bars";
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+          mobileMenuBtn.setAttribute("aria-label", "Open menu");
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll(".nav-links a").forEach(link => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          mobileMenuIcon.className = "fas fa-bars";
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+          mobileMenuBtn.setAttribute("aria-label", "Open menu");
+        });
+      });
+
+      // ====== DEMO TABS ======
+      const demoButtons = document.querySelectorAll(".demo-tab");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      demoButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          // Remove active class from all buttons and contents
+          demoButtons.forEach((btn) => {
+            btn.classList.remove("active");
+            btn.setAttribute("aria-selected", "false");
+          });
+          tabContents.forEach((content) => {
+            content.classList.remove("active");
+            content.setAttribute("aria-hidden", "true");
+          });
+
+          // Add active class to clicked button
+          button.classList.add("active");
+          button.setAttribute("aria-selected", "true");
+
+          // Show corresponding content
+          const tabId = button.dataset.tab;
+          const targetTab = document.getElementById(`${tabId}-tab`);
+          targetTab.classList.add("active");
+          targetTab.setAttribute("aria-hidden", "false");
+        });
+      });
+
+      // ====== FAQ ACCORDION ======
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          const answer = question.nextElementSibling;
+          const icon = question.querySelector(".faq-icon");
+
+          // Toggle active class
+          question.classList.toggle("active");
+          answer.classList.toggle("active");
+
+          // Update aria-expanded for accessibility
+          const isExpanded = question.classList.contains("active");
+          question.setAttribute("aria-expanded", isExpanded);
+          answer.setAttribute("aria-hidden", !isExpanded);
+        });
+      });
+
+      // ====== FORM SUBMISSION ======
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        // Get form values
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+
+        // Show success message
+        showToast(
+          `Thank you ${name}! We've received your message and will contact you at ${email} soon.`
+        );
+
+        // Reset form
+        contactForm.reset();
+      });
+
+      // ====== SCROLL TO TOP ======
+      const scrollTopBtn = document.getElementById("scrollTop");
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          scrollTopBtn.classList.add("show");
+        } else {
+          scrollTopBtn.classList.remove("show");
+        }
+      });
+
+      scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      // ====== SMOOTH SCROLLING ======
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          if (targetId === "#") return;
+
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            const headerHeight = document.querySelector(".header").offsetHeight;
+            window.scrollTo({
+              top: targetElement.offsetTop - headerHeight - 20,
+              behavior: "smooth",
+            });
+
+            // Update active nav link
+            document.querySelectorAll(".nav-links a").forEach(link => {
+              link.classList.remove("active");
+            });
+            this.classList.add("active");
+          }
+        });
+      });
+
+      // ====== SCROLL ANIMATIONS ======
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all elements with fade-in class
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // ====== TOAST NOTIFICATION ======
+      function showToast(message) {
+        // Create toast element
+        const toast = document.createElement("div");
+        toast.className = "toast-notification";
+        toast.innerHTML = `
+          <i class="fas fa-check-circle"></i>
+          <span>${message}</span>
+        `;
+
+        // Add styles
+        Object.assign(toast.style, {
+          position: "fixed",
+          top: "20px",
+          right: "20px",
+          background: "var(--gradient-primary)",
+          color: "white",
+          padding: "var(--space-md) var(--space-lg)",
+          borderRadius: "var(--radius-md)",
+          boxShadow: "var(--shadow-lg)",
+          display: "flex",
+          alignItems: "center",
+          gap: "10px",
+          zIndex: "9999",
+          opacity: "0",
+          transform: "translateX(100%)",
+          transition: "all var(--transition-normal)",
+          maxWidth: "400px",
+          fontFamily: "inherit"
+        });
+
+        document.body.appendChild(toast);
+
+        // Animate in
+        setTimeout(() => {
+          Object.assign(toast.style, {
+            opacity: "1",
+            transform: "translateX(0)"
+          });
+        }, 10);
+
+        // Remove after 3 seconds
+        setTimeout(() => {
+          Object.assign(toast.style, {
+            opacity: "0",
+            transform: "translateX(100%)"
+          });
+          setTimeout(() => {
+            if (toast.parentNode) {
+              toast.parentNode.removeChild(toast);
+            }
+          }, 300);
+        }, 3000);
+      }
+
+      // ====== DEMO FUNCTIONS ======
+      window.simulateMobile = function () {
+        showToast("Mobile view simulated - Container width adjusted");
+        const demoContainer = document.querySelector('.iframe-container > div');
+        if (demoContainer) {
+          demoContainer.style.maxWidth = "320px";
+          demoContainer.style.transition = "all var(--transition-normal)";
+        }
+      };
+
+      window.simulateTablet = function () {
+        showToast("Tablet view simulated - Container width adjusted");
+        const demoContainer = document.querySelector('.iframe-container > div');
+        if (demoContainer) {
+          demoContainer.style.maxWidth = "768px";
+          demoContainer.style.transition = "all var(--transition-normal)";
+        }
+      };
+
+      window.simulateDesktop = function () {
+        showToast("Desktop view simulated - Container width reset");
+        const demoContainer = document.querySelector('.iframe-container > div');
+        if (demoContainer) {
+          demoContainer.style.maxWidth = "400px";
+          demoContainer.style.transition = "all var(--transition-normal)";
+        }
+      };
+
+      // ====== SET CURRENT YEAR ======
+      document.getElementById("currentYear").textContent = new Date().getFullYear();
+
+      // ====== ADD KEYBOARD SHORTCUTS ======
+      document.addEventListener("keydown", (e) => {
+        // Ctrl/Cmd + / for theme toggle
+        if ((e.ctrlKey || e.metaKey) && e.key === "/") {
+          e.preventDefault();
+          themeToggle.click();
+        }
+
+        // Escape key closes mobile menu
+        if (e.key === "Escape" && navLinks.classList.contains("active")) {
+          navLinks.classList.remove("active");
+          mobileMenuIcon.className = "fas fa-bars";
+          mobileMenuBtn.setAttribute("aria-expanded", "false");
+          mobileMenuBtn.setAttribute("aria-label", "Open menu");
+        }
+      });
+
+      // ====== PERFORMANCE OBSERVER ======
+      if ('PerformanceObserver' in window) {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            console.log(`LCP candidate: ${entry.startTime}`, entry);
+          }
+        });
+
+        observer.observe({ entryTypes: ['largest-contentful-paint'] });
+      }
+
+      // ====== RESPONSIVE IMAGES ======
+      // This would typically be handled with srcset attributes in real images
+      // For demo purposes, we're using inline SVG and icons
+
+      // ====== LAZY LOADING ======
+      // Add loading="lazy" to images if they were present
+      // document.querySelectorAll('img').forEach(img => {
+      //   img.loading = 'lazy';
+      // });
+
+      // ====== PWA READINESS ======
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('ServiceWorker registered:', registration);
+            })
+            .catch(error => {
+              console.log('ServiceWorker registration failed:', error);
+            });
+        });
+      }
+
+      // ====== OFFLINE DETECTION ======
+      window.addEventListener('online', () => {
+        showToast('You are back online!');
+      });
+
+      window.addEventListener('offline', () => {
+        showToast('You are offline. Some features may not work.');
+      });
+    });
+
+    // ====== ADDITIONAL GLOBAL FUNCTIONS ======
+    window.refreshIframe = function () {
+      showToast("Page refreshed - This would reload an actual iframe");
+    };
+
+    window.toggleFullscreen = function () {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+          console.error(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    };
+
+    window.openInNewTab = function () {
+      window.open("https://example.com", "_blank");
+    };
+  </script>
+</body>
+
+</html>
