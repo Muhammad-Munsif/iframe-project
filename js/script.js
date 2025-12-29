@@ -1,4 +1,3 @@
-<script>
     // Enhanced Website Functionality with Dark/Light Mode
     document.addEventListener("DOMContentLoaded", function () {
       // ====== THEME TOGGLE ======
@@ -371,4 +370,3 @@
     window.openInNewTab = function () {
       window.open("https://example.com", "_blank");
     };
-  </script>
